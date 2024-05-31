@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Course Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Course Management System repository! This project is a fullstack web application designed for managing courses, built with Spring Boot for the backend and React.js for the frontend. The application supports CRUD (Create, Read, Update, Delete) operations for course management.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [API Endpoints](#api-endpoints)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Add new courses
+- View all courses
+- Update course details
+- Delete courses
+- User-friendly interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+- **Backend:** Spring Boot, Spring Data JPA, REST API
+- **Frontend:** React.js, Axios, React Router
+- **Database:** H2 (In-memory database for development and testing)
+- **Build Tools:** Maven (for backend), npm (for frontend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+Before you begin, ensure you have the following installed on your machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Java Development Kit (JDK) 11 or later
+- Node.js and npm (Node Package Manager)
+- Maven
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```sh
+   git clone https://github.com/Saifullah00/Course-Management-System.git
+   cd course-management-system/backend
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Build the backend application:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```sh
+   mvn clean install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Run the backend application:
 
-## Learn More
+   ```sh
+   mvn spring-boot:run
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   The backend server will start at `http://localhost:9080`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend
 
-### Code Splitting
+1. Navigate to the frontend directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```sh
+   cd ../frontend
+   ```
 
-### Analyzing the Bundle Size
+2. Install the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```sh
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. Start the frontend application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```sh
+   npm start
+   ```
 
-### Advanced Configuration
+   The frontend server will start at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Running the Application
 
-### Deployment
+Once both the backend and frontend servers are running, open your browser and go to `http://localhost:3000`. You should see the homepage of the Course Management System.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+### Course Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **GET /api/courses**: Retrieve a list of all courses
+- **GET /api/courses/{id}**: Retrieve a single course by ID
+- **POST /api/courses**: Create a new course
+- **PUT /api/courses/{id}**: Update an existing course by ID
+- **DELETE /api/courses/{id}**: Delete a course by ID
+
+### Example Request and Response
+
+#### GET /api/courses
+
+Request:
+```sh
+curl -X GET http://localhost:9080/api/courses
+```
+
+Response:
+```json
+[
+  {
+    "id": 1,
+    "title": "Spring Boot for Beginners",
+    "description": "Learn Spring Boot from scratch",
+  },
+  {
+    "id": 2,
+    "title": "React.js Essentials",
+    "description": "Master the basics of React.js",
+  }
+]
+```
+
+## Screenshots
+
+![Home Page](screenshots/home.png)
+*Home page showing list of courses*
+
+![Add Course](screenshots/add-course.png)
+*Form to add a new course*
+
+![View Course](screenshots/edit-course.png)
+*Form to edit an existing course*
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Thank you for checking out the Course Management System! If you have any questions or feedback, feel free to open an issue or contact the repository owner. Happy coding!
